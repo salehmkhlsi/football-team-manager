@@ -191,7 +191,7 @@ export default function PlayerDetailsClient({
             </CardHeader>
             <CardContent>
               <div className="overflow-x-auto">
-                <table className="border-collapse w-full">
+                <table className="border-collapse w-full text-center">
                   <thead>
                     <tr className="bg-slate-100">
                       <th className="border p-2 text-right">تاریخ</th>
@@ -273,7 +273,7 @@ export default function PlayerDetailsClient({
             </CardHeader>
             <CardContent>
               <div className="overflow-x-auto">
-                <table className="border-collapse w-full">
+                <table className="border-collapse w-full text-center">
                   <thead>
                     <tr className="bg-slate-100">
                       <th className="border p-2 text-right">تاریخ جلسه</th>

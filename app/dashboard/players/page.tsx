@@ -71,15 +71,15 @@ export default function PlayersPage() {
               <p>در حال بارگذاری...</p>
             </div>
           ) : (
-            <Table>
+            <Table className="text-center">
               <TableHeader>
                 <TableRow>
-                  <TableHead>نام بازیکن</TableHead>
-                  <TableHead>کد ملی</TableHead>
-                  <TableHead>تاریخ تولد</TableHead>
-                  <TableHead>تیم</TableHead>
-                  <TableHead>پست بازی</TableHead>
-                  <TableHead className="text-left">عملیات</TableHead>
+                  <TableHead className="text-center">نام بازیکن</TableHead>
+                  <TableHead className="text-center">کد ملی</TableHead>
+                  <TableHead className="text-center">تاریخ تولد</TableHead>
+                  <TableHead className="text-center">تیم</TableHead>
+                  <TableHead className="text-center">پست بازی</TableHead>
+                  <TableHead className="text-center">عملیات</TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
@@ -92,12 +92,12 @@ export default function PlayersPage() {
                 ) : (
                   filteredPlayers.map((player) => (
                     <TableRow key={player.id}>
-                      <TableCell>{player.name}</TableCell>
-                      <TableCell>{player.national_id}</TableCell>
-                      <TableCell>{player.birth_date}</TableCell>
-                      <TableCell>{player.team}</TableCell>
-                      <TableCell>{player.position}</TableCell>
-                      <TableCell>
+                      <TableCell className="text-center">{player.name}</TableCell>
+                      <TableCell className="text-center">{player.national_id}</TableCell>
+                      <TableCell className="text-center">{player.birth_date}</TableCell>
+                      <TableCell className="text-center">{player.team}</TableCell>
+                      <TableCell className="text-center">{player.position}</TableCell>
+                      <TableCell className="text-center">
                         <Button
                           variant="link"
                           onClick={() =>

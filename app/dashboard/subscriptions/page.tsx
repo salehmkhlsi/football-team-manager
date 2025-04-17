@@ -411,39 +411,39 @@ export default function SubscriptionsPage() {
           ) : filteredSubscriptions.length === 0 ? (
             <p className="text-center py-4">هیچ اشتراکی یافت نشد.</p>
           ) : (
-            <Table>
+            <Table className="text-center">
               <TableHeader>
                 <TableRow>
-                  <TableHead>نام بازیکن</TableHead>
-                  <TableHead>نوع اشتراک</TableHead>
-                  <TableHead>تاریخ شروع</TableHead>
-                  <TableHead>تاریخ پایان</TableHead>
-                  <TableHead>مبلغ (تومان)</TableHead>
-                  <TableHead>وضعیت پرداخت</TableHead>
-                  <TableHead>وضعیت</TableHead>
-                  <TableHead>عملیات</TableHead>
+                  <TableHead className="text-center">نام بازیکن</TableHead>
+                  <TableHead className="text-center">نوع اشتراک</TableHead>
+                  <TableHead className="text-center">تاریخ شروع</TableHead>
+                  <TableHead className="text-center">تاریخ پایان</TableHead>
+                  <TableHead className="text-center">مبلغ (تومان)</TableHead>
+                  <TableHead className="text-center">وضعیت پرداخت</TableHead>
+                  <TableHead className="text-center">وضعیت</TableHead>
+                  <TableHead className="text-center">عملیات</TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
                 {filteredSubscriptions.map((subscription) => (
                   <TableRow key={subscription.id}>
-                    <TableCell className="font-medium">
+                    <TableCell className="font-medium text-center">
                       {subscription.player_name}
                     </TableCell>
-                    <TableCell>{subscription.subscription_type}</TableCell>
-                    <TableCell>
+                    <TableCell className="text-center">{subscription.subscription_type}</TableCell>
+                    <TableCell className="text-center">
                       {format(new Date(subscription.start_date), "yyyy/MM/dd")}
                     </TableCell>
-                    <TableCell>
+                    <TableCell className="text-center">
                       {format(new Date(subscription.end_date), "yyyy/MM/dd")}
                     </TableCell>
-                    <TableCell>
+                    <TableCell className="text-center">
                       {subscription.amount.toLocaleString()}
                       {subscription.payment_status === "partial" &&
                         ` (${subscription.paid_amount.toLocaleString()} پرداخت شده)`}
                     </TableCell>
-                    <TableCell>
-                      <div className="flex items-center">
+                    <TableCell className="text-center">
+                      <div className="flex items-center justify-center">
                         {subscription.payment_status === "paid" ? (
                           <>
                             <CheckCircle className="mr-2 h-4 w-4 text-green-500" />
@@ -462,7 +462,7 @@ export default function SubscriptionsPage() {
                         )}
                       </div>
                     </TableCell>
-                    <TableCell>
+                    <TableCell className="text-center">
                       <span
                         className={`px-2 py-1 rounded text-xs font-medium ${
                           subscription.status === "active"
@@ -479,7 +479,7 @@ export default function SubscriptionsPage() {
                           : "منقضی شده"}
                       </span>
                     </TableCell>
-                    <TableCell>
+                    <TableCell className="text-center">
                       <DropdownMenu>
                         <DropdownMenuTrigger asChild>
                           <Button variant="ghost" className="h-8 w-8 p-0">

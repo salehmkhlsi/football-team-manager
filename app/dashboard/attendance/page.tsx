@@ -275,22 +275,22 @@ export default function AttendancePage() {
             </CardDescription>
           </CardHeader>
           <CardContent>
-            <Table>
+            <Table className="text-center">
               <TableHeader>
                 <TableRow>
-                  <TableHead className="w-[50px]">ردیف</TableHead>
-                  <TableHead>نام بازیکن</TableHead>
+                  <TableHead className="w-[50px] text-center">ردیف</TableHead>
+                  <TableHead className="text-center">نام بازیکن</TableHead>
                   <TableHead className="text-center">حاضر</TableHead>
                   <TableHead className="text-center">غایب</TableHead>
                   <TableHead className="text-center">تاخیر</TableHead>
-                  <TableHead className="w-[300px]">یادداشت</TableHead>
+                  <TableHead className="w-[300px] text-center">یادداشت</TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
                 {players.map((player, index) => (
                   <TableRow key={player.id}>
-                    <TableCell>{index + 1}</TableCell>
-                    <TableCell className="font-medium">{player.name}</TableCell>
+                    <TableCell className="text-center">{index + 1}</TableCell>
+                    <TableCell className="font-medium text-center">{player.name}</TableCell>
                     <TableCell className="text-center">
                       <Button
                         variant={
@@ -333,7 +333,7 @@ export default function AttendancePage() {
                         <Clock className="h-4 w-4" />
                       </Button>
                     </TableCell>
-                    <TableCell>
+                    <TableCell className="text-center">
                       <Textarea
                         placeholder="یادداشت مربی..."
                         className="h-8 min-h-8"

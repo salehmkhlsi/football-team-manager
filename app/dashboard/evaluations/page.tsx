@@ -167,28 +167,28 @@ export default function EvaluationsPage() {
           ) : filteredEvaluations.length === 0 ? (
             <p className="text-center py-4">هیچ ارزیابی‌ای یافت نشد.</p>
           ) : (
-            <Table>
+            <Table className="text-center">
               <TableHeader>
                 <TableRow>
-                  <TableHead>نام بازیکن</TableHead>
-                  <TableHead>تیم</TableHead>
-                  <TableHead>تاریخ ارزیابی</TableHead>
+                  <TableHead className="text-center">نام بازیکن</TableHead>
+                  <TableHead className="text-center">تیم</TableHead>
+                  <TableHead className="text-center">تاریخ ارزیابی</TableHead>
                   <TableHead className="text-center">امتیاز کلی</TableHead>
-                  <TableHead>عملیات</TableHead>
+                  <TableHead className="text-center">عملیات</TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
                 {filteredEvaluations.map((evaluation) => (
                   <TableRow key={evaluation.id}>
-                    <TableCell className="font-medium">{evaluation.player_name}</TableCell>
-                    <TableCell>{evaluation.team}</TableCell>
-                    <TableCell dir="ltr" className="text-right">{evaluation.evaluation_date}</TableCell>
+                    <TableCell className="font-medium text-center">{evaluation.player_name}</TableCell>
+                    <TableCell className="text-center">{evaluation.team}</TableCell>
+                    <TableCell dir="ltr" className="text-center">{evaluation.evaluation_date}</TableCell>
                     <TableCell className="text-center">
                       <div className="inline-flex items-center justify-center h-8 w-8 rounded-full bg-primary/10 text-primary font-medium">
                         {evaluation.overall_rating}
                       </div>
                     </TableCell>
-                    <TableCell>
+                    <TableCell className="text-center">
                       <Button
                         variant="ghost"
                         onClick={() =>

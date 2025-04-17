@@ -217,34 +217,34 @@ export default function PlayerEvaluationsPage() {
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <Table>
+              <Table className="text-center">
                 <TableHeader>
                   <TableRow>
-                    <TableHead>تاریخ ارزیابی</TableHead>
+                    <TableHead className="text-center">تاریخ ارزیابی</TableHead>
                     <TableHead className="text-center">امتیاز کلی</TableHead>
-                    <TableHead>پاس</TableHead>
-                    <TableHead>شوت</TableHead>
-                    <TableHead>دریبل</TableHead>
-                    <TableHead>تکنیک</TableHead>
-                    <TableHead>تاکتیک</TableHead>
-                    <TableHead>عملیات</TableHead>
+                    <TableHead className="text-center">پاس</TableHead>
+                    <TableHead className="text-center">شوت</TableHead>
+                    <TableHead className="text-center">دریبل</TableHead>
+                    <TableHead className="text-center">تکنیک</TableHead>
+                    <TableHead className="text-center">تاکتیک</TableHead>
+                    <TableHead className="text-center">عملیات</TableHead>
                   </TableRow>
                 </TableHeader>
                 <TableBody>
                   {evaluations.map((evaluation) => (
                     <TableRow key={evaluation.id}>
-                      <TableCell>{evaluation.evaluation_date}</TableCell>
+                      <TableCell className="text-center">{evaluation.evaluation_date}</TableCell>
                       <TableCell className="text-center">
                         <div className="inline-flex items-center justify-center h-8 w-8 rounded-full bg-primary/10 text-primary font-medium">
                           {evaluation.overall}
                         </div>
                       </TableCell>
-                      <TableCell>{evaluation.passing}</TableCell>
-                      <TableCell>{evaluation.shooting}</TableCell>
-                      <TableCell>{evaluation.dribbling}</TableCell>
-                      <TableCell>{evaluation.technique}</TableCell>
-                      <TableCell>{evaluation.tactical}</TableCell>
-                      <TableCell>
+                      <TableCell className="text-center">{evaluation.passing}</TableCell>
+                      <TableCell className="text-center">{evaluation.shooting}</TableCell>
+                      <TableCell className="text-center">{evaluation.dribbling}</TableCell>
+                      <TableCell className="text-center">{evaluation.technique}</TableCell>
+                      <TableCell className="text-center">{evaluation.tactical}</TableCell>
+                      <TableCell className="text-center">
                         <Button
                           variant="ghost"
                           size="sm"

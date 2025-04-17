@@ -4,8 +4,8 @@ import { attendance, Attendance } from "@/app/data/attendance";
 import { Metadata } from "next";
 import PlayerDetailsClient from "./PlayerDetailsClient";
 // توابع کمکی برای کار با داده‌ها
-const getPlayerById = (playerId: string): Player | undefined => {
-  return players.find(player => player.id === playerId);
+const getPlayerById = (playerId: string): Player | null => {
+  return players.find(player => player.id === playerId) || null;
 };
 
 const getEvaluationsByPlayerId = (playerId: string): Evaluation[] => {

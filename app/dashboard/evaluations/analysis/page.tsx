@@ -66,7 +66,7 @@ export default function AnalysisPage() {
   const [players, setPlayers] = useState<Player[]>([]);
   const [selectedPlayers, setSelectedPlayers] = useState<string[]>([]);
   const [evaluations, setEvaluations] = useState<Record<string, Evaluation[]>>({});
-  const [teamFilter, setTeamFilter] = useState<string>("");
+  const [teamFilter, setTeamFilter] = useState<string>("ALL_TEAMS");
   const [isLoading, setIsLoading] = useState(true);
   const router = useRouter();
 
@@ -77,7 +77,7 @@ export default function AnalysisPage() {
       // Filter players based on team filter
       let filteredPlayers = [...playersData];
       
-      if (teamFilter) {
+      if (teamFilter && teamFilter !== "ALL_TEAMS") {
         filteredPlayers = filteredPlayers.filter(player => player.team === teamFilter);
       }
       
@@ -102,7 +102,7 @@ export default function AnalysisPage() {
       // Process evaluations for each selected player
       selectedPlayers.forEach((playerId) => {
         const playerEvaluations = evaluationsData
-          .filter(eval => eval.player_id === playerId)
+          .filter(evaluation => evaluation.player_id === playerId)
           .sort((a, b) => new Date(a.evaluation_date).getTime() - new Date(b.evaluation_date).getTime());
           
         evaluationsByPlayer[playerId] = playerEvaluations;
@@ -297,7 +297,7 @@ export default function AnalysisPage() {
                   <SelectValue placeholder="فیلتر بر اساس تیم" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="">همه تیم‌ها</SelectItem>
+                  <SelectItem value="ALL_TEAMS">همه تیم‌ها</SelectItem>
                   {teams.map((team) => (
                     <SelectItem key={team} value={team}>
                       {team}
